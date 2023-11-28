@@ -38,10 +38,7 @@ const pristine = new Pristine(form, {
 });
 
 const onTextChange = () => {
-  submitButton.disabled = false;
-  if (!pristine.validate()) {
-    submitButton.disabled = true;
-  }
+  submitButton.disabled = !pristine.validate();
 };
 
 const toggleSubmitButton = (isDisabled) => {
